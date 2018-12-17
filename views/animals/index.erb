@@ -1,0 +1,12 @@
+<h1>Scottish Animal Sanctury</h1>
+<h2>Animal name and Admission date</h2>
+
+<% @animals.each do |animal| %>
+
+    <p>Name: <%= animal.animal_name() %></p>
+    <p>Animal: <%= animal.animal_type() %></p>
+    <p>Admission Date: <%= animal.admin_date() %></p>
+    <p><a href="/animals/<%= animal.id %>">Show Animal Details</a></p>
+    <hr>
+
+<% end %>
