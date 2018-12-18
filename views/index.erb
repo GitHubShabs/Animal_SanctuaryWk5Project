@@ -5,7 +5,7 @@
 <% @animals.each do |animal| %>
   <p>Name: <%= animal.animal_name() %></p>
   <p>Type: <%= animal.animal_type() %></p>
-  <p>Admission Date: <%= animal.admin_date() %></p>
+  <p>Admission Date: <%= animal.adopt_ready() %></p>
   <p><a href="/animals/<%= animal.id %>">Show Animal Details</a></p>
   <hr>
 <% end %>

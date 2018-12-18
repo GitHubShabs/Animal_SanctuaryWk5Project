@@ -3,10 +3,14 @@
 
 <% @animals.each do |animal| %>
 
+
     <p>Name: <%= animal.animal_name() %></p>
     <p>Animal: <%= animal.animal_type() %></p>
     <p>Admission Date: <%= animal.admin_date() %></p>
+    <% if animal.adopt_ready() == "t" %> <span>Is the Animal Adoptable: Yes</span>
+    <% end %>
+    <% if animal.adopt_ready() == "f" %><span>Is the Animal Adoptable: No</span>
+    <% end %>
     <p><a href="/animals/<%= animal.id %>">Show Animal Details</a></p>
     <hr>
-
 <% end %>
