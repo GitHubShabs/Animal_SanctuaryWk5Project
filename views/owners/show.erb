@@ -1,0 +1,11 @@
+<h2><%= @animal.name.capitalize %></h2>
+
+<p>Animal type: <%= @animal.animal.type %></p>
+<p>Animal Name: <%= @animal.animal_name %></p>
+<p>Owner: <%= @animal.owner_id %></p>
+<p>admin_date: <%= @animal.admin_date %></p>
+
+<p><a href="/animals/<%= @animal.id %>/edit">Edit Animal Details</a></p>
+<form method="post" action="/animals/<%= @animal.id %>/delete">
+  <input type="submit" value="Delete Animals"/>
+</form>
