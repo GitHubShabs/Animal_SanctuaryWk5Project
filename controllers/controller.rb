@@ -10,3 +10,9 @@ get '/animals' do # index
   @animals = Animal.all()
   erb(:"animals/index")
 end
+
+# *****list of animals and their adoption status*****
+get '/animals' do # index
+  @animals = Animal.all()
+  erb(:"animals/index")
+end

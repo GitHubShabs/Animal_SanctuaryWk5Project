@@ -1,11 +1,11 @@
 <h2><%= @animal.name.capitalize %></h2>
 
-<p>type: <%= @animal.type %></p>
-<p>Last Name: <%= @student.last_name %></p>
-<p>House: <%= @student.house_id %></p>
-<p>Age: <%= @student.age %></p>
+<p>Animal type: <%= @animal.animal.type %></p>
+<p>Animal Name: <%= @animal.animal_name %></p>
+<p>Owner: <%= @animal.owner_id %></p>
+<p>admin_date: <%= @animal.admin_date %></p>
 
-<p><a href="/students/<%= @student.id %>/edit">Edit Student</a></p>
-<form method="post" action="/students/<%= @student.id %>/delete">
-  <input type="submit" value="Delete Students"/>
+<p><a href="/animals/<%= @animal.id %>/edit">Edit Animal Details</a></p>
+<form method="post" action="/animals/<%= @animal.id %>/delete">
+  <input type="submit" value="Delete Animals"/>
 </form>

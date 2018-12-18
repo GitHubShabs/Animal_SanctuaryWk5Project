@@ -33,6 +33,37 @@ class Animal
       @id = id.to_i
     end
 
+    def owner()
+      owner = Owner.find(@owner_id)
+      return owner
+    end
+
+    def update()
+        sql = "UPDATE animals
+        SET
+        (
+          animal_name,
+          animal_type,
+          admin_date,
+          adopt_ready,
+          owner_id
+        ) =
+        (
+          $1, $2, $3, $4, $5
+        )
+        WHERE id = $6"
+        values = [@animal_name, @animal_type, @admin_date, @adopt_ready, @owner_id]
+        SqlRunner.run(sql, values)
+      end
+
+      def delete()
+          sql = "DELETE FROM animals
+          WHERE id = $1"
+          values = [@id]
+          SqlRunner.run(sql, values)
+      end
+
+
     def Animal.delete_all()
         sql = "DELETE FROM animals"
         SqlRunner.run(sql)
@@ -45,9 +76,22 @@ class Animal
         return animal
     end
 
-
     def Animal.map_items(animal_data)
         return animal_data.map { |animal| Animal.new(animal) }
     end
+
+
+    def Animal.find(id)
+        sql = "SELECT * FROM animals WHERE id = $1"
+        values = [id]
+        result = SqlRunner.run(sql, values).first
+        student = Animal.new(result)
+        return animal
+    end
+
+    def format_name
+        return "#{@animal_name.capitalize} #{@animal_type.capitalize}"
+    end
+
 
 end
