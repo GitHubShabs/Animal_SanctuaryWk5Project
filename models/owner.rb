@@ -63,7 +63,7 @@ class Owner
     def Owner.all()
         sql = "SELECT * FROM owners"
         owner_data = SqlRunner.run(sql)
-        owner = map_items(owner_data)
+        owners = map_items(owner_data)
         return owners
     end
 

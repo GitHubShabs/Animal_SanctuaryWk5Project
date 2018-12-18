@@ -1,11 +1,13 @@
-<h1>Animal Shelter</h1>
+<!-- <h1>Animal Shelter</h1>
 <h2>Database for the adoption of abandoned pets :-( </h2>
 
 
+
+
 <% @animals.each do |animal| %>
-  <p>Name: <%= animal.animal_name() %></p>
-  <p>Type: <%= animal.animal_type() %></p>
-  <p>Admission Date: <%= animal.adopt_ready() %></p>
-  <p><a href="/animals/<%= animal.id %>">Show Animal Details</a></p>
-  <hr>
+<p>Name: <%= animal.animal_name() %></p>
+<p>Type: <%= animal.animal_name() %></p>
+<p>Admission Date: <%= animal.adopt_ready() %></p>
+<p><a href="/animal/<%= animal.id %>">Show Animal Details</a></p>
+<hr>
 <% end %>

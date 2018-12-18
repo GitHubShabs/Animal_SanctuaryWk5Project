@@ -2,7 +2,7 @@ require_relative('../models/animal')
 require_relative('../models/owner')
 require('pry')
 
-# Delete function here
+# Add delete function here
 Animal.delete_all()
 Owner.delete_all()
 

@@ -1,0 +1,14 @@
+<%# Add owners list here for the adoption page, existing owners below: %>
+
+<h2>Animal Owners Homepage</h2>
+<h3>List of owners registered on the Scottish Sanctuary Database</h3>
+
+
+
+
+  <% @owners.each do |owner| %>
+    <p>First_Name: <%= owner.first_name() %></p>
+    <p>Last_Name: <%= owner.last_name() %></p>
+    <p><a href="/owners/<%= owner.id %>">Show Owners info</a></p>
+    <hr>
+  <% end %>
