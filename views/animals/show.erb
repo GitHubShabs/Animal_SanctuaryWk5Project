@@ -1,1 +1,21 @@
 <h2>Photographs of Animals in Sanctuary</h2>
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<% if @animal.animal_type() == "Cat" %> <h4>Introducing Billy the Cat</h4>
+<p>Billy was abandoned by his owners when he was one.</p>
+<p>He is very playful and loves children but hates dogs.</p>
+<% end %>
+
+<% if @animal.animal_type() == "Dog" %> <h4>Introducing Rover the Dog</h4>
+<p>Rover was found on the motorway when he was only two years old.</p>
+<p>He is very shy and doesn't like busy streets.</p>
+<% end %>
+
+<% if @animal.animal_type() == "Rabbit" %> <h4>Bunny the Rabbit</h4>
+<p>Bunny arrived in June and was found in the middle of Princes Street near Primark.</p>
+<p>She was slightly traumatised but is she is very friendly.</p>
+<% end %>
