@@ -20,7 +20,7 @@ end
 # ******* show ***************************************
 get '/animals/:id' do # show
   @animal = Animal.find( params[:id] )
-  erb( :"animals/show" )
+  erb(:"animals/show")
 end
 
 # ********* create ************************************
