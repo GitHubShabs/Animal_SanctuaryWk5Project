@@ -29,13 +29,14 @@ end
 
 # ******* show ***************************************
 get '/owners/:id' do # show
-  @owners = Owner.find()
+
+  @owners = Owner.find(params['id'])
   erb( :"owners/show" )
 end
 
 
  # ******* delete owner entry ************************
- post '/owners/:id/delete' do # delete
+ get '/owners/:id/delete' do # delete
    @owners = Owner.find( params[:id] )
    @owners.delete()
    redirect to '/owners'
@@ -45,8 +46,8 @@ end
 # ******* edit entry ************************
 
  get '/owners/:id/edit' do # edit
-   @owner = PizzaOrder.find( params[:id] )
-   erb( :edit )
+   @owner = Owner.find( params[:id] )
+   erb(:"owners/edit")
  end
 
 

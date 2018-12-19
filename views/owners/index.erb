@@ -1,5 +1,6 @@
 <%# Add owners list here for the adoption page, existing owners below: %>
 
+<a class="links" href="/animals">Return To Animal Sanctury Home Page</a>
 <h2>Animal Owners Homepage</h2>
 
 <!DOCTYPE html>
@@ -19,6 +20,6 @@
   <% @owners.each do |owner| %>
     <p>First name: <%= owner.first_name() %></p>
     <p>Last name: <%= owner.last_name() %></p>
-  <a href="/owners/delete">Delete owner</a>
+  <a href="/owners/<%= owner.id%>/delete">Delete owner</a>
   <hr>
   <% end %>

@@ -1,59 +1,17 @@
-<%# <!-- <h2 class="green">Please use this form to edit the information on selected animal.</h2>
-<div class="container">
+<form method="post" action="/owners-edit/<%= @owners.id %>">
 
-<form method="post" action="/animal/<%= @animal.id %>" >
-  <!-- <label for="arrival-date-field">Arrival Date:</label>
-  <input
-  type="date"
-  name="arrival_date"
-  id="arrival-date-field"
-  value="<%= @animal.arrival_date %>"
-  required>
-  <br>
-
-  <label for="name-field">Animal Name:</label>
+  <label for="first-name-field">First Name:</label>
   <input
   type="text"
-  name="name"
-  id="name-field"
-  value="<%= @animal.name %>"
-  required>
-  <br>
+  name="first_name"
+  id="first-name-field"
+  value="<%= @owners.first_name %>"
+  />
 
-  <label for="type-field">Animal Type:</label>
+  <label for="last-name-field">Last Name:</label>
   <input
   type="text"
-  name="type"
-  id="type-field"
-  value="<%= @animal.type %>"
-  required>
-  <br>
-
-  <label for="adopted-selection">Adopted:</label>
-    <select
-    name="adopted"
-    id="adopted-selection"
-    value="<%= @animal.adopted %>"
-    required>
-      <option value="For Adoption">For Adoption</option>
-      <option value="Adopted">Adopted</option>
-    </select>
-  <br>
-
-
-  <label for="owner-selection">Owner Selection:</label>
-  <select name="owner"
-   id ="owner-selection"
-   value="<%= @animal.owner_id %>"
-    required>
-    <% @owners.each do |owner| %>
-    <option value="<%= owner.id %>" selected="Animal Shelter"><%= owner.name %></option>
-    <% end %>
-  </select>
-
-  <br>
-  </div>
-<div class="left">
-<input class="green" type="submit" value="Edit Animal Details">
-</div>
-</form> --> %> -->
+  name="last_name"
+  id="last-name-field"
+  value="<%= @owners.last_name %>"
+  />

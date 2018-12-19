@@ -44,6 +44,13 @@ class Owner
         SqlRunner.run(sql, values)
       end
 
+    def delete()
+          sql = "DELETE FROM owners
+          WHERE id = $1"
+          values = [@id]
+          SqlRunner.run(sql, values)
+    end
+
 
     def Owner.delete_all()
         sql = "DELETE FROM owners"
@@ -56,7 +63,7 @@ class Owner
         WHERE id = $1"
         values = [id]
         result = SqlRunner.run(sql,values).first
-        house = Owner.new(result)
+        owner = Owner.new(result)
         return owner
     end
 
