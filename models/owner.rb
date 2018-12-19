@@ -34,7 +34,7 @@ class Owner
         SET
         (
           first_name,
-          last_type
+          last_name
         ) =
         (
           $1, $2
@@ -55,7 +55,7 @@ class Owner
         sql = "SELECT * FROM owners
         WHERE id = $1"
         values = [id]
-        result = SqlRunner.run(sql ,values).first
+        result = SqlRunner.run(sql,values).first
         house = Owner.new(result)
         return owner
     end

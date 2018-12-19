@@ -10,15 +10,28 @@ get '/owners' do # index
   erb(:"owners/index")
 end
 
-# ******* show ***************************************
-get '/owners/:id' do # show
-  @owners = Owner.find( params[:id] )
-  erb( :show )
+
+# ********* new - form to get new owners*************
+get '/owners/new' do # new
+  # @owners = Owner.new()
+  # @owners.save()
+  erb( :"owners/new" )
 end
 
-# ********* create ************************************
+# ********* create ** create new owners ************
 post '/owners' do # create
-  @owners = Owner.new( params )
+  @owners = Owner.new()
   @owners.save()
-  erb( :create )
+  erb( :"owners/create" )
+end
+
+
+
+
+
+
+# ******* show ***************************************
+get '/owners/:id' do # show
+  @owners = Owner.find()
+  erb( :"owners/show" )
 end
