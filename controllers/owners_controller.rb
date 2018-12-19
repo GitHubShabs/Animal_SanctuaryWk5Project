@@ -18,16 +18,13 @@ get '/owners/new' do # new
   erb( :"owners/new" )
 end
 
+
 # ********* create ** create new owners ************
 post '/owners' do # create
-  @owners = Owner.new()
+  @owners = Owner.new(params)
   @owners.save()
   erb( :"owners/create" )
 end
-
-
-
-
 
 
 # ******* show ***************************************
@@ -35,3 +32,27 @@ get '/owners/:id' do # show
   @owners = Owner.find()
   erb( :"owners/show" )
 end
+
+
+ # ******* delete owner entry ************************
+ post '/owners/:id/delete' do # delete
+   @owners = Owner.find( params[:id] )
+   @owners.delete()
+   redirect to '/owners'
+ end
+
+
+# ******* edit entry ************************
+
+ get '/owners/:id/edit' do # edit
+   @owner = PizzaOrder.find( params[:id] )
+   erb( :edit )
+ end
+
+
+# ******* update entry ************************
+
+ post '/owners/:id' do # update
+   Owner.new( params ).update
+   redirect to '/owners'
+ end

@@ -7,7 +7,7 @@
 <body>
 <nav>
   <ul>
-      <a href="/owners/new">Add new owners here</a>
+        <a href="/owners/new">Add new owners here</a>
   </ul>
 </nav>
 </body>
@@ -19,5 +19,6 @@
   <% @owners.each do |owner| %>
     <p>First name: <%= owner.first_name() %></p>
     <p>Last name: <%= owner.last_name() %></p>
-    <hr>
+  <a href="/owners/delete">Delete owner</a>
+  <hr>
   <% end %>
